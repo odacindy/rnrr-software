@@ -1,0 +1,76 @@
+/* colors */
+
+body, .nav_active {
+    background-color: #70D0D0;
+    color: black;
+}
+
+#header_label {
+    background-color: #008080;
+    color: white;
+}
+
+#nav_sidebar, #nav_open_button, #nav_close_button {
+    background-color: #30A0A0;
+    color: white;
+}
+
+/* dimensions */
+
+header {
+    position: fixed; /* to prevent scrolling of header bar on mobile devices */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+}
+
+#nav_sidebar {
+    width: 150px;
+    margin-top: 40px; /* same as header height */
+}
+
+#nav_open_button, #nav_close_button {
+    height: 40px; /* same as header height */
+    width: 50px;
+}
+
+#header_label {
+    position: absolute;
+    top: 0;
+    bottom: 40px; /* same as header height */
+    left: 50px; /* same as nav_open/close_button width */
+    right: 0;
+    height: 40px; /* same as header height */
+    line-height: 40px; /* same as header height */
+    vertical-align: middle;
+    text-align: center;
+}
+
+#main {
+  position: absolute;
+  top: 40px; /* same as header height */
+  bottom: 0;
+  left: 150px; /* same as nav_sidebar width */
+  right: 0;
+}
+
+/* borders */
+
+#header_label, #nav_open_button { /* but not nav_close_button, so it blends into nav_sidebar */
+    border-bottom: 1px solid white;
+}
+
+#nav_sidebar, #nav_open_button, #nav_close_button {
+    border-right: 1px solid white;
+}
+
+/* text */
+
+#nav_open_button, #nav_close_button {
+    text-align: left;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sidebar-active</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- main page navigation -->
+
+<nav id="nav_sidebar" class="w3-sidebar w3-bar-block">
+  <a href="page0.html" id="nav_sidebar_button_0" target="main_iframe" onclick="nav_activate(this.id)" class="w3-bar-item w3-button nav_sidebar_button nav_active">Page 0</a>
+  <a href="page1.html" id="nav_sidebar_button_1" target="main_iframe" onclick="nav_activate(this.id)" class="w3-bar-item w3-button nav_sidebar_button">Page 1</a>
+  <a href="page2.html" id="nav_sidebar_button_2" target="main_iframe" onclick="nav_activate(this.id)" class="w3-bar-item w3-button nav_sidebar_button">Page 2</a>
+</nav>
+
+<!-- main page content -->
+
+<div id="main" class="w3-container">
+  <iframe name="main_iframe" src="page0.html" style="border:none; width:100%; height:95%"></iframe>
+</div>
+
+<!-- main page header, put as the last elements to stack on top of everything else -->
+
+<header>
+  <div id="header_label">
+    <i>sidebar-active</i>
+  </div>
+  <button id="nav_open_button" class="w3-button" onclick="w3_open()" style="display:none;">&#9776;</button>
+  <button id="nav_close_button" class="w3-button" onclick="w3_close()" style="display:block;">&#9776;</button>
+</header>
+
+<!-- scripting elements -->
+
+<script type="text/javascript">
+
+// show the nav_sidebar
+function w3_open() {
+  document.getElementById('nav_sidebar').style.display = 'block';
+  document.getElementById('nav_open_button').style.display = 'none';
+  document.getElementById('nav_close_button').style.display = 'block';
+  document.getElementById('main').style.left =
+    document.getElementById('nav_sidebar').style.width;
+}
+
+// hide the nav_sidebar
+function w3_close() {
+  document.getElementById('nav_sidebar').style.display = 'none';
+  document.getElementById('nav_open_button').style.display = 'block';
+  document.getElementById('nav_close_button').style.display = 'none';
+  document.getElementById('main').style.left = '0';
+}
+
+// highlight the active button in the nav_sidebar
+function nav_activate(clicked_id) {
+  var elementList = document.getElementsByClassName('nav_sidebar_button');
+
+  for (var i = 0; i < elementList.length; i++) {
+    var element = elementList[i];
+
+    if (element.id == clicked_id) {
+      element.classList.add('nav_active');
+    } else {
+      element.classList.remove('nav_active');
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
