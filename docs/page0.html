@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page 0</title>
+  <title>GIT Cheatsheet</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="w3.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- The following is to allow "Bootstrap Collapse" Accordian -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
-<h1>This is Page 0</h1>
+<h1>GIT Cheatsheet</h1>
+
+<div class="container">
+  <h2>Accordion Example</h2>
+  <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">GIT Basics</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+        <ul>
+          <li>Remember you need to be in your git working directory (e.g., ~/Desktop/FIRST/terkel or ~/Desktop/FIRST/FTC-Team-25, or wherever you put your GIT directories) to do the git commands. </li>
+          <li>It’s a good policy to keep your <b>master</b> branch, in your local repository and GitHub too, <b>clean of changes</b> you make, and only to pull things into it from upstream.  Do your new work on a branch instead!</li>
+          <li><b>origin</b> is the default name of the remote git repository from which you cloned</li>
+          <li>When a repo is cloned, it has a default remote called <b>origin</b> that points to your fork on GitHub (for example, https://github.com/odacindy/terkel), not the original repo it was forked from (which was from github.com/cmacfarl/terkel). You will use <b>upstream</b> to fetch from the original repo (in order to keep your local copy in sync with the project you want to contribute to). </li>
+          <li>The git <b>fetch</b> command imports commits from a <b>remote repository</b> into your <b>local repo</b>. The resulting commits are stored as remote branches instead of the normal local branches that we’ve been working with. This gives you a chance to review (the remote) changes before integrating them into your (local) copy of the project. </li>
+          <li>Make sure that you <b>tell GIT your user name and email</b> when you first start doing GIT stuff <br><code>git config --global user.name "Winnie Pooh"</code> <br><code>git config --global user.email janedoe@rocknrollrobots25.com</code><br>Note that the "--global" indicates that this applies to all your repositories. If you only want it set for a single repository, remove the "--global" option. </li>
+          <li><b>HEAD</b> is the snapshot of your last commit. HEAD can point to any commit, it does not need to be the last commit in any branch. (When HEAD points to a commit that is not the last commit in a branch, that is a "detached HEAD" </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Useful GIT commands</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+        <ul>
+          <li>List remote repository URLs and their shortcut names<br><code>git remote -v</code></li>
+          <li>List all available branches<code>git branch -a</code></li>
+          <li>Add a new shortcut name for a remote repository URL<br><code>git remote add &ltshortcut_name&gt &lturl&gt </code><br><code>Example: git remote add elixawu https://github.com/elixawu/master.git </code></li>
+          <li>Create a new local branch that is the same as someone else's remote branch<br> <code>git checkout -b &ltmy_new_branch&gt &ltremote&gt/&ltbranch_name&gt <br><code>For example: git checkout -b mybranchname elixawu/master </code>
+  </code></li>
+          <li> <code>  </code></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div> 
+</div>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
 
